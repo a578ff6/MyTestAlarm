@@ -1,24 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyTestAlarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="LKx-GX-RbH">
+                                <rect key="frame" x="36.666666666666657" y="318" width="320" height="216"/>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your alarm below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCs-y0-ggo">
+                                <rect key="frame" x="116.66666666666667" y="237.66666666666666" width="159.66666666666663" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSh-cp-pse">
+                                <rect key="frame" x="147" y="584" width="99" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Set Alarm"/>
+                                <connections>
+                                    <action selector="setAlarmButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hIo-7f-CBt"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FCs-y0-ggo" firstAttribute="width" relation="lessThanOrEqual" secondItem="LKx-GX-RbH" secondAttribute="width" id="8xb-R0-CLm"/>
+                            <constraint firstItem="FCs-y0-ggo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="P5G-0L-B2B"/>
+                            <constraint firstItem="JSh-cp-pse" firstAttribute="top" secondItem="LKx-GX-RbH" secondAttribute="bottom" constant="50" id="e3e-p3-jci"/>
+                            <constraint firstItem="LKx-GX-RbH" firstAttribute="top" secondItem="FCs-y0-ggo" secondAttribute="bottom" constant="60" id="i0O-uy-m2D"/>
+                            <constraint firstItem="LKx-GX-RbH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pRW-Tz-Jim"/>
+                            <constraint firstItem="LKx-GX-RbH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sfS-cy-gDc"/>
+                            <constraint firstItem="JSh-cp-pse" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ynK-LW-ZZ6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="alarmLabel" destination="FCs-y0-ggo" id="HaR-E8-UUD"/>
+                        <outlet property="datePicker" destination="LKx-GX-RbH" id="b2D-K8-ciP"/>
+                        <outlet property="scheduleButton" destination="JSh-cp-pse" id="SCw-nO-3Nn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="41.984732824427482" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
